@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Explainer by SWC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="topBar">
+      <h1>Code Explainer by SWC</h1>
+      <div class="actions">
+        <button id="newSessionBtn" class="btn">New session</button>
+        <button id="helpBtn" class="btn secondary">How it works</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="panel inputPanel">
+        <h2>Paste your HTML here</h2>
+        <textarea id="codeInput" placeholder="Paste HTML or simple HTML plus CSS or JS inside &lt;style&gt; or &lt;script&gt; tags."></textarea>
+        <div class="row">
+          <label for="languageSelect">Explanation language</label>
+          <input type="hidden" id="languageSelect" value="en" />
+          <button id="explainBtn" class="btn glow">Explain</button>
+        </div>
+        <p class="small">Privacy note. All processing stays in your browser. Nothing is sent to any server.</p>
+      </section>
+
+      <section class="panel explainPanel">
+        <div class="explainHeader">
+          <h2>Explanation</h2>
+          <div class="progressWrap">
+            <div id="progressText">0 of 0</div>
+            <div class="progressBar">
+              <div id="progressFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="explainArea">
+          <div class="explainBlock" id="explainBlock"></div>
+          <div class="controls">
+            <button id="prevBtn" class="btn secondary">Previous</button>
+            <button id="playBtn" class="btn">Play voice</button>
+            <button id="nextBtn" class="btn primary">Next</button>
+          </div>
+        </div>
+
+        <div id="quizArea" class="quiz hidden">
+          <h3>Quick check</h3>
+          <p id="quizQuestion"></p>
+          <div id="quizOptions" class="options"></div>
+          <div id="quizFeedback"></div>
+        </div>
+
+        <div class="sources">
+          <h3>Trusted sources used</h3>
+          <ul id="sourceList"></ul>
+        </div>
+      </section>
+
+      <section class="panel previewPanel">
+        <h2>Live preview</h2>
+        <iframe id="previewFrame" sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin"></iframe>
+        <div class="row">
+          <button id="refreshPreview" class="btn">Refresh preview</button>
+          <label><input type="checkbox" id="autoRefresh" checked> Auto refresh</label>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made for beginners who learn by doing. Code stays on your device. No tracking.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
