@@ -1,4 +1,4 @@
-// Code Explainer by SWC
+// HTML Explainer by SWC
 // All logic runs locally in the browser.
 // The parser creates an explanation plan that moves from tags to attributes to nesting.
 
